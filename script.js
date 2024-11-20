@@ -37,8 +37,16 @@ let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
-    let winner = (humanChoice === computerChoice) ? 'Draw': (humanChoice === '')
+    if ( (humanChoice === "rock" && computerChoice === "paper") || (humanChoice === "paper" && computerChoice === "scissor") || (humanChoice === "scissor" && computerChoice === "rock") ) {
+        console.log("\tComputer Wins!");
+        computerScore += 1;
+    } else if ( (humanChoice === "rock" && computerChoice === "scissor") || (humanChoice === "paper" && computerChoice === "rock") || (humanChoice === "scissor" && computerChoice === "paper")) {
+        console.log("\tHuman Wins!");
+        humanScore += 1;
+    }
 }
 
 const humanChoice = getHumanChoice();
 const computerChoice = getComputerChoice();
+
+playRound(humanChoice, computerChoice);
