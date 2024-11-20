@@ -29,8 +29,15 @@ function getComputerChoice(){
     let scissor = 2;
     choice = getRandomInt(3);
     // USING ternery operator for conditional 
-    let computerChoice = (choice === 0) ? 'rock' : (choice === 1) ? 'paper' : (choice === 2) ? 'scissor' : 'rock';
+    let computerChoice = (choice === 0) ? 'rock' : (choice === 1) ? 'paper' : (choice === 2) ? 'scissor' : 'rock'; // last rock is default choice
     return computerChoice;
+}
+
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+    let winner = (humanChoice === computerChoice) ? 'Draw': (humanChoice === '')
 }
 
 const humanChoice = getHumanChoice();
