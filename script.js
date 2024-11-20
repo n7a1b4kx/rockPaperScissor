@@ -33,14 +33,15 @@ function getComputerChoice(){
     return computerChoice;
 }
 
-let humanScore = 0;
-let computerScore = 0;
-
 function playRound(humanChoice, computerChoice) {
+
+    // checking for round winner and incrementing it's score!!!
     if ( (humanChoice === "rock" && computerChoice === "paper") || (humanChoice === "paper" && computerChoice === "scissor") || (humanChoice === "scissor" && computerChoice === "rock") ) {
+        console.log(`Human choosed ${humanChoice} / Computer Choosed ${computerChoice}.`);
         console.log("\tComputer Wins!");
         computerScore += 1;
     } else if ( (humanChoice === "rock" && computerChoice === "scissor") || (humanChoice === "paper" && computerChoice === "rock") || (humanChoice === "scissor" && computerChoice === "paper")) {
+        console.log(`Human choosed ${humanChoice} / Computer Choosed ${computerChoice}.`);
         console.log("\tHuman Wins!");
         humanScore += 1;
     }
@@ -49,4 +50,13 @@ function playRound(humanChoice, computerChoice) {
 const humanChoice = getHumanChoice();
 const computerChoice = getComputerChoice();
 
-playRound(humanChoice, computerChoice);
+function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
+    greeting();
+    for (let i = 0; i < 5; i++) {
+        playRound(humanChoice, computerChoice);
+    }
+}
+
+playGame();
