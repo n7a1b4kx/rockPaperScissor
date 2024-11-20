@@ -17,7 +17,8 @@ function getRandomInt(max) {
 
 
 function getHumanChoice(){
-    let userInput = prompt("Enter your desired choice:");
+    // default choice for human and computer is rock -draw!!!
+    let userInput = prompt("Enter your desired choice:", 'rock');
     return userInput.toLowerCase();
 }
 
