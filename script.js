@@ -33,14 +33,8 @@ function getHumanChoice(){
 }
 
 function getComputerChoice(){
-    // assigning numbers to choices
-    let rock = 0;
-    let paper = 1;
-    let scissor = 2;
-    choice = getRandomInt(3);
-    // USING ternery operator for conditional 
-    let computerChoice = (choice === 0) ? 'rock' : (choice === 1) ? 'paper' : (choice === 2) ? 'scissor' : 'rock'; // last rock is default choice
-    return computerChoice;
+    const CHOICES = ['rock', 'paper', 'scissor'];
+    return CHOICES[getRandomInt(3)];
 }
 
 function choiceResult(humanChoice, computerChoice) {
