@@ -1,6 +1,10 @@
 
 let humanChoice = '';
-const HUMAN_SCORE = document.querySelector('.score#human');
+let humanScore = 0;
+let computerScore = 0;
+
+const HUMAN_SCORE = document.querySelector('.score #human');
+const COMPUTER_SCORE = document.querySelector('.score #computer');
 
 const ROCK_BUTTON = document.querySelector('#rock');
 ROCK_BUTTON.addEventListener('click', () => {
@@ -41,23 +45,18 @@ function choiceResult(humanChoice, computerChoice) {
     console.log(`Human choosed ${humanChoice} / Computer Choosed ${computerChoice}.`);
 }
 
-
-let humanScore = 0;
-let computerScore = 0;
-
 function playRound(humanChoice, computerChoice) {
     // checking for round winner and incrementing it's score!!!
     if ( (humanChoice === "rock" && computerChoice === "paper") || (humanChoice === "paper" && computerChoice === "scissor") || (humanChoice === "scissor" && computerChoice === "rock") ) {
         choiceResult(humanChoice, computerChoice);
-        console.log("\tComputer Wins!");
         computerScore += 1;
+        COMPUTER_SCORE.textContent = `Computer Score: ${computerScore}`;
     } else if ( (humanChoice === "rock" && computerChoice === "scissor") || (humanChoice === "paper" && computerChoice === "rock") || (humanChoice === "scissor" && computerChoice === "paper")) {
         choiceResult(humanChoice, computerChoice);
-        console.log("\tHuman Wins!");
         humanScore += 1;
+        HUMAN_SCORE.textContent = `Human Score: ${humanScore}`;
     } else if (humanChoice === computerChoice) {
         choiceResult(humanChoice, computerChoice);
-        console.log("\tDraw");
     }   
 }
 
