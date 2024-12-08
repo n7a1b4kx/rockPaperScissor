@@ -1,16 +1,5 @@
 // creating the underlying algorithm for rock paper scissor game
 
-// game start greeting message
-
-function greeting() {
-    // `` backticks can be used to formatted strings or multiline ones!!!
-    // \n or backslash n create or omits a newline
-    // \t or tab omits or add a tab 4 spaces 
-    console.log("Hello, let's play a little game. Shall we?\nRock Paper Scissor a classic game!\nRules are simple, you have three choices rock, paper, and scissor choose which one you desire.\nBut choose wisely:\n\tRock beats scissor but paper beats it.\n\tPaper beats Rock but scissor beats it.\n\tScissor beats paper but rock beats it.");
-    console.log("\t======Game Start======");
-}
-
-
 // to generate a random integer less than given value -max 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -19,7 +8,7 @@ function getRandomInt(max) {
 
 function getHumanChoice(){
     // default choice for human and computer is rock -draw!!!
-    let userInput = prompt("Enter your desired choice:", 'rock');
+    let userInput = 'rock'; //prompt("Enter your desired choice:", 'rock');
     return userInput.toLowerCase();
 }
 
@@ -59,12 +48,9 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-    greeting();
-    for (let i = 0; i < 5; i++) {
-        let humanChoice = getHumanChoice();
-        let computerChoice = getComputerChoice();
-        playRound(humanChoice, computerChoice);
-    }
+    let humanChoice = getHumanChoice();
+    let computerChoice = getComputerChoice();
+    playRound(humanChoice, computerChoice);
     console.log(`Human Scored: ${humanScore}\nComputer Scored: ${computerScore}`);
 }
 
