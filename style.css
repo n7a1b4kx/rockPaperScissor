@@ -24,5 +24,12 @@ body {
 }
 
 .container {
-    gap: 8px;
+    gap: 16px;
+}
+
+.input-button {
+    height: 32px;
+    width: 64px;
+    border-radius: 8px;
+    border: 1px solid black;
 }
