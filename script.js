@@ -1,4 +1,24 @@
-// creating the underlying algorithm for rock paper scissor game
+
+let humanChoice = '';
+const HUMAN_SCORE = document.querySelector('.score#human');
+
+const ROCK_BUTTON = document.querySelector('#rock');
+ROCK_BUTTON.addEventListener('click', () => {
+    humanChoice = 'rock';
+    playGame();
+});
+
+const PAPER_BUTTON = document.querySelector('#paper');
+PAPER_BUTTON.addEventListener('click', () => {
+    humanChoice = 'paper';
+    playGame();
+});
+
+const SCISSOR_BUTTON = document.querySelector('#scissor');
+SCISSOR_BUTTON.addEventListener('click', () => {
+    humanChoice = 'scissor';
+    playGame();
+});
 
 // to generate a random integer less than given value -max 
 function getRandomInt(max) {
@@ -48,10 +68,7 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-    let humanChoice = getHumanChoice();
     let computerChoice = getComputerChoice();
     playRound(humanChoice, computerChoice);
     console.log(`Human Scored: ${humanScore}\nComputer Scored: ${computerScore}`);
 }
-
-playGame();
