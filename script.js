@@ -69,4 +69,13 @@ function playRound(humanChoice, computerChoice) {
 function playGame() {
     let computerChoice = getComputerChoice();
     playRound(humanChoice, computerChoice);
+    finalWinner();
+}
+
+function finalWinner() {
+    if (humanScore >= 5 || computerScore >= 5) {
+        ROCK_BUTTON.remove();
+        PAPER_BUTTON.remove();
+        SCISSOR_BUTTON.remove();
+    }
 }
